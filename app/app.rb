@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './app/models/user.rb'
+require './app/models/link.rb'
 
 class Bookmark < Sinatra::Base
   get '/' do
@@ -13,6 +15,11 @@ class Bookmark < Sinatra::Base
   get '/user' do
     @user = $user
     erb(:user)
+  end
+
+  post '/new_link' do
+    Link.create(url: params[:url], title: params[:title])
+    redirect '/user'
   end
   # start the server if ruby file executed directly
   run! if app_file == $0

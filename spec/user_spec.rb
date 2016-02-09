@@ -1,4 +1,4 @@
-require 'user'
+require './app/models/user.rb'
 
 describe User do
   subject (:user) {described_class.new("Moses")}

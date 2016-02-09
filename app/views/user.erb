@@ -1,0 +1,18 @@
+<h1><%=@user.name%> Links</h1>
+
+
+  <form action='/new_link' method='post'>
+    <div class='line'>
+      <label for='input'>Title</label>
+      <div class='input'>
+        <input type='text' name='title'>
+      </div>
+    </div>
+    <div class='line'>
+      <label for='input'>URL</label>
+      <div class='input'>
+        <input type='text' name='url'>
+      </div>
+    </div>
+    <input type='submit' value='add'>
+  </form>
