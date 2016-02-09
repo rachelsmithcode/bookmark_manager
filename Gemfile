@@ -3,7 +3,9 @@ ruby '2.2.3'
 
 gem 'rake'
 gem 'rspec'
-gem ‘data_mapper’
+gem 'rspec-sinatra'
+gem 'sinatra'
+gem 'data_mapper'
 gem 'capybara'
-gem 'dm-postgres-adapter’
-
+gem 'dm-postgres-adapter'
+gem 'dm-migrations'

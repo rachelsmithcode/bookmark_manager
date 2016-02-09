@@ -8,12 +8,17 @@ Installation instructions:
 User stories:
 
 As a Makers Student
-So that I can save a website
-I would like to add the sites address and a title/name for each link.
+So that I can see what other people like
+I want to see a list of popular links on the homepage before login.
+
 
 As a Makers Student
 So that I can see what links I stored in the past
 I want to be able to display a list of my links on my user homepage.
+
+As a Makers Student
+So that I can save a website
+I would like to add the sites address and a title/name for each link.
 
 As a Makers Student
 So that I can keep my list updated.
