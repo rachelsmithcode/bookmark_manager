@@ -32,8 +32,12 @@ feature "redirects to user homepage" do
   end
 
   scenario "to have a login button" do
+    Link.create(URL: 'https://en-gb.facebook.com/', title: 'Facebook')
     sign_in
-    expect(page).to have_content("Facebook")
+    expect(page.status_code).to eq 200
+    within 'ul#links' do
+      expect(page).to have_content('Facebook')
+    end
   end
 
 end
