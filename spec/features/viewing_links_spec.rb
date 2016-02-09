@@ -15,6 +15,5 @@ feature 'Viewing links' do
     end
 
   end
-  DatabaseCleaner.clean
 
 end

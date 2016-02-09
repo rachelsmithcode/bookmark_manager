@@ -1,6 +1,7 @@
 require 'spec_helper'
 require './app/app.rb'
 
+
 feature 'Adding links' do
 
   scenario 'Adding a link' do
@@ -17,7 +18,6 @@ feature 'Adding links' do
     end
 
   end
-  DatabaseCleaner.clean
 
 
 end
