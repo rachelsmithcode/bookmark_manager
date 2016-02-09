@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require './app/models/user.rb'
 require './app/models/link.rb'
+require './app/models/link_list.rb'
+require 'tilt/erb'
 
 class Bookmark < Sinatra::Base
   get '/' do
@@ -14,6 +16,8 @@ class Bookmark < Sinatra::Base
 
   get '/user' do
     @user = $user
+    @user.link_list.get_title
+    @user.link_list.get_url
     erb(:user)
   end
 
