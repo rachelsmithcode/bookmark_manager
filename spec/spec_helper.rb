@@ -8,6 +8,9 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require './app/app.rb'
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
 
 
 Capybara.app = BookmarkManager

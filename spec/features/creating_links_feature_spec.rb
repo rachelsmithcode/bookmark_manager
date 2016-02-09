@@ -11,11 +11,13 @@ feature 'Adding links' do
     click_button('Add')
 
     expect(current_path).to eq '/links'
-    
+
     within 'ul#links' do
       expect(page).to have_text('www.wordpress.com')
     end
 
   end
+  DatabaseCleaner.clean
+
 
 end
