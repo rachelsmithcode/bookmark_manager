@@ -26,4 +26,3 @@ I want to be able to add tags to my links.
 As a Makers Student
 So that I can filter and categorise my list.
 I want to be able to be able to filter my list by it’s tags.
-
