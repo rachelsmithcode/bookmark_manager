@@ -16,12 +16,12 @@ class Bookmark < Sinatra::Base
 
   get '/user' do
     @user = $user
-    @user.link_list.get_title
-    @user.link_list.get_url
+    @user.link_list.get_info
     erb(:user)
   end
 
   post '/new_link' do
+    $user.link_list.activation
     Link.create(url: params[:url], title: params[:title])
     redirect '/user'
   end
