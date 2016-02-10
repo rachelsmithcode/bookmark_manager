@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'dm-migrations'
+gem 'pg'
 
 #test related
 gem 'capybara'
