@@ -1,10 +1,14 @@
+ENV["RACK_ENV"] ||= "development"
+
 require 'sinatra/base'
 require './app/models/user.rb'
 require './app/models/link.rb'
 require './app/models/link_list.rb'
 require 'tilt/erb'
 
+
 class Bookmark < Sinatra::Base
+
   get '/' do
     erb(:home)
   end

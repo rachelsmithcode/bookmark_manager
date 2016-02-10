@@ -6,7 +6,7 @@ class Link
   include DataMapper::Resource
 
 
-  property :id,     Serial 
+  property :id,     Serial
   property :title,  String
   property :url,    String
 
@@ -15,7 +15,7 @@ class Link
 
 end
 
-DataMapper.setup(:default, "postgres://localhost/bookmark_manager_test")
+DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
