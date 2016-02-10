@@ -9,6 +9,7 @@ feature 'Adding links' do
     visit '/links/new'
     fill_in 'url', with: 'www.wordpress.com'
     fill_in 'title', with: 'Wordpress'
+    fill_in 'tags', with: 'blog'
     click_button('Add')
 
     expect(current_path).to eq '/links'

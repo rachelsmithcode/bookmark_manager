@@ -3,7 +3,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
-
+require './app/data_mapper_setup.rb'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'

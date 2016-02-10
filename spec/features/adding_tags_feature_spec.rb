@@ -9,17 +9,12 @@ feature 'Adding tags' do
     visit '/links/new'
     fill_in 'url', with: 'www.wordpress.com'
     fill_in 'title', with: 'Wordpress'
-    fill_in 'tag', with: 'blog'
+    fill_in 'tags', with: 'blog'
     click_button('Add')
-
-    expect(current_path).to eq '/links'
-
-
-    within 'ul#links' do
-      expect(page).to have_text('blog')
-    end
+    
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('blog')
 
   end
-
 
 end

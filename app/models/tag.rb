@@ -1,4 +1,5 @@
-require_relative 'data_mapper_setup'
+require 'data_mapper'
+require 'dm-postgres-adapter'
 
 class Tag
 
@@ -6,8 +7,10 @@ class Tag
 
   property :id, Serial
   property :name, String
+  # property :link, String
 
 
-  # has n, :links, :through => Resource
+
+  has n, :links, through: Resource
 
 end
