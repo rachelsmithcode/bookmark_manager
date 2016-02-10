@@ -9,6 +9,7 @@ require 'capybara/rspec'
 require 'rspec'
 require './app/app.rb'
 require 'database_cleaner'
+require 'web_helpers'
 
 # Rspec.configure do |config|
 #   config.before(:suite) do
