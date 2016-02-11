@@ -11,4 +11,13 @@ feature 'Adding tags' do
 
   end
 
+  scenario 'Adding multiple tags' do
+
+    create_links('www.wordpress.com', 'Wordpress', 'blog cat funny')
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('blog', 'cat', 'funny')
+
+  end
+
+
 end

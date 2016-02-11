@@ -7,8 +7,6 @@ class Tag
 
   property :id, Serial
   property :name, String
-  # property :link, String
-
 
 
   has n, :links, through: Resource
