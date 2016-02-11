@@ -10,5 +10,14 @@ def sign_up
   visit '/users/new'
   fill_in 'email', with: 'evil_kitty@dogslife.com'
   fill_in 'password', with: 'humanslavesrg8'
+  fill_in 'password_confirmation', with: 'humanslavesrg8'
+  click_button('Sign up!')
+end
+
+def sign_up_bad
+  visit '/users/new'
+  fill_in 'email', with: 'evil_kitty@dogslife.com'
+  fill_in 'password', with: 'humanslavesrg8'
+  fill_in 'password_confirmation', with: 'ilovehumans'
   click_button('Sign up!')
 end

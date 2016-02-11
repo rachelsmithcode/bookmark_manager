@@ -10,14 +10,12 @@ feature 'Signing up and user accounts' do
     expect(User.first.email).to eq("evil_kitty@dogslife.com")
 
   end
-  #
-  # scenario 'Adding multiple tags' do
-  #
-  #   create_links('www.wordpress.com', 'Wordpress', 'blog cat funny')
-  #   link = Link.first
-  #   expect(link.tags.map(&:name)).to include('blog', 'cat', 'funny')
-  #
-  # end
 
+  scenario 'user not created when password does not match' do
+
+    expect{sign_up_bad}.to change(User, :count).by(0)
+    expect(page).not_to have_content('Welcome, evil_kitty@dogslife.com')
+
+  end
 
 end
