@@ -6,8 +6,12 @@
 
   <body>
 
-    <% if flash[:not_matching_pw] %>
-      <div id='not_matching_pw' style="color:red" ><%= flash[:not_matching_pw] %></div>
+    <% if flash[:errors] && !flash[:errors].empty?%>
+      <ul id='errors' style="color:red" >
+        <% flash[:errors].each do |error| %>
+        <li><%=error%></li>
+      <%end%>
+      </ul>
     <% elsif current_user %>
       Welcome, <%= current_user.email %>
     <% end %>

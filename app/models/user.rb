@@ -9,7 +9,7 @@ class User
   # has n, :tags, through: Resource
 
   property :id, Serial
-  property :email, String, format: :email_address, required: true
+  property :email, String, format: :email_address, required: true, unique: true
   property :password_digest, Text
   attr_reader :password
   attr_accessor :password_confirmation
@@ -18,7 +18,8 @@ class User
   # only 50 characters by default
   # and it's not enough for the hash and salt
   validates_confirmation_of :password
-  # validates_format_of :email, as :email_addresss
+
+  #validates_format_of :email, as :email_addresss
 
   def password=(password)
     @password = password
