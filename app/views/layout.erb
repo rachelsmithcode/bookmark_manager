@@ -7,7 +7,7 @@
   <body>
 
     <% if flash[:not_matching_pw] %>
-      <div id='not_matching_pw'><%= flash[:not_matching_pw] %></div>
+      <div id='not_matching_pw' style="color:red" ><%= flash[:not_matching_pw] %></div>
     <% elsif current_user %>
       Welcome, <%= current_user.email %>
     <% end %>

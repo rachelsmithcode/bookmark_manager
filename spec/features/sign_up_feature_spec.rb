@@ -10,14 +10,22 @@ feature 'Signing up and user accounts' do
   end
 
   scenario 'user not created when password does not match' do
-    expect{sign_up_bad}.to change(User, :count).by(0)
+    expect{sign_up_bad_pw}.to change(User, :count).by(0)
     expect(page).not_to have_content('Welcome, evil_kitty@dogslife.com')
   end
 
   scenario 'error message shown on same page when password does not match' do
-    sign_up_bad
+    sign_up_bad_pw
     expect(current_path).to eq('/users')
     expect(page).to have_content('Passwords do not match')
+  end
+
+  scenario 'new user cannot sign up with blank email address' do
+    expect{sign_up_bad('')}.to change(User, :count).by(0)
+  end
+
+  scenario 'new user cannot sign up with blank email address' do
+    expect{sign_up_bad('i am not an email')}.to change(User, :count).by(0)
   end
 
 end
