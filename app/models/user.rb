@@ -13,6 +13,7 @@ class User
   property :password_digest, Text
   attr_reader :password
   attr_accessor :password_confirmation
+
   #It's Text and not String because String holds
   # only 50 characters by default
   # and it's not enough for the hash and salt
